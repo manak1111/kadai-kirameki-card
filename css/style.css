@@ -647,8 +647,26 @@ header .entry-button .fas {
   font-size: 1.6rem;
 }
 
-.service table .mark {
+.service table .mark1,
+.service table .mark2,
+.service table .mark3{
+  position: relative;
+}
+
+
+.service table .mark1::after,
+.service table .mark2::after,
+.service table .mark3::after{
+  position: absolute;
+  content:"※1";
+  bottom: .4rem;
+  font-size: 1.6rem;
+  color:#000;
   padding-left:1.6rem;
+}
+
+.service table .mark2::after{
+  content: "※2";
 }
 
 .service .note {
@@ -696,21 +714,27 @@ header .entry-button .fas {
     font-weight: 400;
   }
 
-  .service table .mark {
+  .service table .mark1::after,
+  .service table .mark2::after,
+  .service table .mark3::after{
+    bottom: .18rem;
+    font-size: 1rem;
     padding-left:0;
-    font-size:1rem;
     font-weight: 700;
+  }
+  .service table .mark1::after {
+    top:-1rem;
+    right:-.5rem;
+  }
+
+  .service table .mark3::after {
+    padding-left:.4rem;
   }
 
   .service table .sp-fw700{
     font-weight: 700;
   }
 
-  .service table .superscript {
-    position: absolute;
-    top:30%;
-    right:1rem;
-  }
   .service .note {
     width:34.8rem;
     font-size: 1.2rem;
@@ -946,7 +970,6 @@ transform: scaleX(-1);
 @media screen and (max-width:767px) {
   .others {
     padding: 0 0 4rem;
-    /* padding: 0 0 3.1rem; */
   }
   
   .others dl {
@@ -1127,7 +1150,9 @@ transform: scaleX(-1);
   }
 
 }
+/* ------ */
 /* footer */
+/* ------ */
 
 footer  {
   padding: 2rem 8px 7.7rem ;
